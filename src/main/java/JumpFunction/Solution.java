@@ -1,14 +1,17 @@
 package JumpFunction;
 
-import java.awt.*;
+
+import java.util.List;
 import java.util.Set;
 
 /**
  * Created by Jeevan on 12/14/16.
  */
 public class Solution {
-    public static Solution genrateRandomInitialState(Set<Container> solutionSpace, Requirements requirements) {
-        return null;
+    private List<Container>  containers;
+
+    public Solution(List<Container> containers){
+        this.containers = containers;
     }
 
     public SolutionCost getCost() {
@@ -16,7 +19,14 @@ public class Solution {
         return null;
     }
 
-    public Solution swapAndCreateNewSolution() {
-        return null;
+
+    public List<Container> getContainers() {
+        return containers;
     }
+
+    public void setContainers(List<Container> containers) {
+        this.containers = containers;
+    }
+
+
 }
