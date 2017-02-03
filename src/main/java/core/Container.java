@@ -10,17 +10,30 @@ public abstract class Container {
         this.id = id;
         this.hierarchy = hierarchy;
         this.cost = 10;
-
     }
 
-    public void calculateCost() {
-        hierarchy.getChildren();
+    public int calculateCost() {
+
+        int childCost = 0;
+        String[] children = getChildren();
+        for(String id : children) {
+            Container childContainer = queryDB(id);
+            childCost += childContainer.calculateCost();
+
+        }
+
+        return cost + childCost;
     }
 
-    public void getChildren() {
-
+    public String[] getChildren() {
+        return hierarchy.getChildren(id);
     }
 
-    public void getParent() {
+    public void getParents() {
+        hierarchy.getParents(id);
+    }
+
+    public Container queryDB(String id) {
+        return null;
     }
 }

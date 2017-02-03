@@ -1,6 +1,5 @@
 package core;
 
-import java.util.List;
 import java.util.Map;
 
 
@@ -12,12 +11,12 @@ public class Hierarchy {
         this.structure = hd;
     }
 
-    public void getParents(String id) {
-        structure.get(id);
+    public String[] getParents(String id) {
+        return structure.get(id).parents;
     }
 
-    public void getChildren(String id) {
-
+    public String[] getChildren(String id) {
+        return structure.get(id).children;
     }
 }
 
