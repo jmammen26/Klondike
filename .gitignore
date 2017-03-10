@@ -4,7 +4,12 @@ target/
 *.class
 
 #Idea
-idea/*
+:q
+
+
+
+
+.idea/*
 
 # Log file
 *.log
