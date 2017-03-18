@@ -1,5 +1,6 @@
 package JumpFunction;
 
+import jdk.nashorn.internal.runtime.ScriptObject;
 import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.impl.list.mutable.FastList;
 
@@ -26,8 +27,8 @@ public class Solution {
         return new Solution(serviceContainers);
     }
 
-    public int getCost() {
-        newList(containersInSolution).sumByInt(c -> c.getWeight())
+    public SolutionCost getCost() {
+        return new SolutionCost();
     }
 
     public Solution swapAndCreateNewSolution() {
@@ -40,5 +41,9 @@ public class Solution {
 
     public void setContainersInSolution(List<ServiceContainer> containersInSolution) {
         this.containersInSolution = containersInSolution;
+    }
+
+    public List<ServiceContainer> getContainers() {
+        return containersInSolution;
     }
 }
