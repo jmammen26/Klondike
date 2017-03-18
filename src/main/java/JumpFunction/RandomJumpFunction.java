@@ -1,7 +1,6 @@
 package JumpFunction;
 
-import java.awt.*;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -17,9 +16,9 @@ public class RandomJumpFunction {
     public double threshold;
     public long timeDurationToRunForInMillis;
 
-    public Set<Solution> jumpRandomlyAndFindBestSolutions(Set<Container> solutionSpace, int clusterSize, Requirements requirements) {
+    public Set<Solution> jumpRandomlyAndFindBestSolutions(List<ServiceContainer> solutionSpace, int clusterSize, Requirements requirements) {
         long timeToRunTill = timeDurationToRunForInMillis + System.currentTimeMillis();
-        Solution initialSolution = Solution.genrateRandomInitialState(solutionSpace, requirements);
+        Solution initialSolution = Solution.genrateRandomInitialState(solutionSpace, requirements.getNumberOfInstances());
         currentBestCost = SolutionCost.maxCost();
         bestSolutions.add(initialSolution);
         while (timeToRunTill > System.currentTimeMillis()) {
